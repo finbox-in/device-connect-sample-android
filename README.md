@@ -20,5 +20,7 @@ LOGGER_SDK_VERSION=<LOGGER_SDK_VERSION>
 
 Note: These values will be provided by the FinBox team during integration.
 
+Replace `YOUR_API_KEY` in `MainActivity` with the one provided by FinBox team.
+
 ## Integration
 For more details on integration, refer to https://docs.finbox.in/device-connect/android.html

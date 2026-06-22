@@ -32,6 +32,9 @@ dependencyResolutionManagement {
             credentials(AwsCredentials::class) {
                 accessKey = properties.getProperty("ACCESS_KEY")
                 secretKey = properties.getProperty("SECRET_KEY")
+                println("MAYA>>> accessKey:"+accessKey)
+                println("MAYA>>> secretKey:"+secretKey)
+
             }
             content {
                 includeGroup("in.finbox")

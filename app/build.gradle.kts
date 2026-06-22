@@ -57,11 +57,11 @@ dependencies {
      **********************/
     coreLibraryDesugaring(libs.desugar.jdk.libs)
 
-    val DC_SDK_VERSION = "6.10.0"
-    val DC_FLAVOR = "ind"
-    val COMMON_SDK_VERSION = "2.10.0"
-    val COMMON_FLAVOR = "parent"
-    val LOGGER_SDK_VERSION = "2.10.0"
+    val DC_SDK_VERSION = "6.10.19"
+    val DC_FLAVOR = "phl"
+    val COMMON_SDK_VERSION = "2.10.19"
+    val COMMON_FLAVOR = "maya"
+    val LOGGER_SDK_VERSION = "2.10.14"
 
     implementation("in.finbox:mobileriskmanager:${DC_SDK_VERSION}:${DC_FLAVOR}-release@aar") {
         isTransitive = true

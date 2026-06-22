@@ -11,6 +11,7 @@ import androidx.activity.result.contract.ActivityResultContracts.RequestMultiple
 import androidx.appcompat.app.AppCompatActivity
 import `in`.finbox.deviceconnectsample.databinding.ActivityMainBinding
 import `in`.finbox.mobileriskmanager.FinBox
+import `in`.finbox.mobileriskmanager.FinBoxAuthCallback
 import `in`.finbox.mobileriskmanager.common.annotations.FinBoxErrorCode
 import `in`.finbox.mobileriskmanager.devicematch.DeviceMatch
 
@@ -24,7 +25,6 @@ class MainActivity : AppCompatActivity() {
     /**
      * FinBox SDK instance
      */
-    private val finBox = FinBox()
 
     /**
      * Activity Result Launcher
@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         mBinding.startSyncButton.setOnClickListener {
-            finBox.startPeriodicSync()
+            FinBox.startPeriodicSync()
             disableSyncButton()
         }
     }
@@ -109,7 +109,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun createUser() {
-        val apiKey = "YOUR_API_KEY"
+        val apiKey = "GvLQCcuNTF74hRVFpxDvd4PZBUS5Zb1R82nwijly"
 
         val customerId = Utils.getCustomerId()
 
@@ -121,12 +121,12 @@ class MainActivity : AppCompatActivity() {
         // Create the user or get a reference to an existing user
         FinBox.createUser(
             apiKey, customerId,
-            object : FinBox.FinBoxAuthCallback {
+            object : FinBoxAuthCallback {
                 override fun onSuccess(accessToken: String) {
                     // Save user creation successful flag
 
                     // Set Device Match
-                    finBox.setDeviceMatch(getDeviceMatch())
+                    FinBox.setDeviceMatch(getDeviceMatch())
 
                     // Disable create user button
                     disableCreateUserButton()
